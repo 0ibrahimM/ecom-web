@@ -1,25 +1,32 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-use App\Http\Controllers\HomeController;
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get ('/',[FrontendController::class, 'index'] );
+Route::get('/product-details', [FrontendController::class, 'productDetails']);
+Route::get ('/shop', [FrontendController::class,'shop']);
+Route::get ('/Return-Process', [FrontendController::class,'ReturnProcess']);
+Route::get('/category-Page', [FrontendController::class, 'categoryPage']);
+Route::get('/subcategory-Page', [FrontendController::class, 'subcategoryPage']);
+Route::get('checkout', [FrontendController::class, 'checkOut']);
+Route::get('/view-cart', [FrontendController::class, 'viewCart']);
+// policy page
+Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy']);
+Route::get('/terms-conditions', [FrontendController::class, 'termsConditions']);
+Route::get('/refund-policy', [FrontendController::class, 'refundPolicy']);
+Route::get('/payment-policy', [FrontendController::class, 'paymentPolicy']);
+Route::get('/about-us', [FrontendController::class, 'aboutUs']);
+Route::get('/contact-us', [FrontendController::class, 'contactUs']);
 
-route::get ('/',[HomeController::class, 'index']);
-route::get ('/contuc-us',[HomeController::class, 'contuc']);
+
+
+
+
+
+
+
 
 
