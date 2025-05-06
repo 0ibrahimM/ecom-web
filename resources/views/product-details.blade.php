@@ -11,12 +11,12 @@
                             <div class="product-images-slider-outer">
                                 <div class="slider slider-content">
                                     <div>
-                                        <img src="{{asset('/assets/images/product.png')}}" alt="slider images">
+                                        <img src="./assets/images/product.png" alt="slider images">
                                     </div>
                                 </div>
                                 <div class="slider slider-thumb">
                                     <div>
-                                        <img src="{{asset('/assets/images/product.png')}}" alt="slider images">
+                                        <img src="./assets/images/product.png" alt="slider images">
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                             Category
                         </h3>
                         <a href="#" class="category-item-outer">
-                            <img src="{{asset('/assets/images/product.png')}}" alt="category image">
+                            <img src="./assets/images/product.png" alt="category image">
                             Test Category
                         </a>
                     </div>

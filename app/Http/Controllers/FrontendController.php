@@ -24,6 +24,11 @@ public function returnprocess ()
     {
         return view ('returnProcess');
     }
+    public function viewAll()
+{
+    return view('view-all');
+}
+
 
 public function categoryPage()
 {
@@ -66,7 +71,6 @@ public function contactUs()
 {
     return view('contact-us');
 }
-
 
 
 }
