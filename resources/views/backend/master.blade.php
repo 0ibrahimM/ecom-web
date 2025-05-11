@@ -34,5 +34,9 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 @include('backend.includes.srcipt')
+@stack('srcipt')
+
+@stack('srcipt')
+
 </body>
 </html>

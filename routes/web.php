@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashbordController;
 use App\Http\Controllers\FrontendController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +36,15 @@ Auth::routes();
 
 route::get('admin/dashbord', [DashbordController::class, 'adminDashbord']);
 route::get('admin/logout', [AdminController::class, 'adminLogout']);
+//Category
+
+route::get('admin/category/list', [CategoryController::class, 'categoryList']);
+
+route::get('admin/category/create', [CategoryController::class, 'categoryCreate']);
+route::Post('admin/category/store', [CategoryController::class, 'categoryStore']);
+route::get('admin/category/delete/{id}', [CategoryController::class, 'categoryDelete']);
+route::get('admin/category/edit/{id}', [CategoryController::class, 'categoryEdit']);
+route::post('admin/category/update/{id}', [CategoryController::class, 'categoryUpdate']);
+
+
+
