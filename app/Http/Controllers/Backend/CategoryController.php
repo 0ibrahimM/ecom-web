@@ -4,21 +4,25 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rules\Exists;
 
 class CategoryController extends Controller
 {
-
-    public function categoryList()
+public function subCategoryList ()
     {
-        $categoties = Category::get();
-
-
-        return view('backend.category.list',  compact('categoties'));
+        $subCategories = SubCategory::get();
+        return view ('backend.sub-category.list', compact('subCategories'));
     }
+
+    // public function categoryList()
+    // {
+    //     $categoties = Category::get();
+
+
+    //     return view ('backend.sub-category.list', compact('subCategories'));
+    // }
     public function categoryCreate()
     {
         return view('backend.category.create');
@@ -47,7 +51,7 @@ class CategoryController extends Controller
 
     public function categoryDelete($id)
     {
-        $category = category::find($id);
+        $category = Category::find($id);
 
         if ($category->image && file_exists('backend/image/category/' . $category->image)) {
             unlink('backend/image/category/' . $category->image);
@@ -57,19 +61,11 @@ class CategoryController extends Controller
     }
     public function categoryEdit($id)
     {
-        $category = category::find($id);
+        $category = Category::find($id);
 
         return view('backend.category.edit', compact('category'));
     }
-    // public function categoryUpdate(Request $Request, $id)
-    // {
-    //     $category = category::find($id);
-    //     $category->name = $request->name;
-    //     $category->slug = str::slug($request->name);
-
-    //     $category->save();
-    //     return redirect()->back();
-    // }
+   
     public function categoryUpdate(Request $request, $id)
 {
     $category = Category::find($id);

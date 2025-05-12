@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashbordController;
+use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
@@ -46,5 +47,9 @@ route::get('admin/category/delete/{id}', [CategoryController::class, 'categoryDe
 route::get('admin/category/edit/{id}', [CategoryController::class, 'categoryEdit']);
 route::post('admin/category/update/{id}', [CategoryController::class, 'categoryUpdate']);
 
+//SubCategory
+route::get('admin/sub-category/list', [SubCategoryController::class, 'subCategoryList']);
+route::get('admin/sub-category/create', [SubCategoryController::class, 'subCategoryCreate']);
+route::Post('admin/sub-category/store', [SubCategoryController::class, 'subCategoryStore']);
 
 

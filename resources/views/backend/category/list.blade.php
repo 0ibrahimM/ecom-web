@@ -59,7 +59,7 @@
                     </td>
                     <td>
                      <a href="{{url('/admin/category/edit/'.$category->id)}}" class="btn btn-primary">Edit</a>
-                     <a href="{{url('/admin/category/delete/'.$category->id)}}" onclick="return confirm('Are You Sure?')" class="btn btn-danger">Delite</a>
+                     <a href="{{url('/admin/category/delete/'.$category->id)}}" onclick="return confirm('Are You Sure?')" class="btn btn-danger">Delete</a>
                     </td>
                     
                   </tr>
