@@ -50,7 +50,8 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach ( $categoties  as $category)
+
+                  @foreach ($categories as $category)
                   <tr>
                     <td>{{$loop->index+1}}</td>
                     <td>{{$category->name}}</td>

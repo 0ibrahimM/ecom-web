@@ -10,23 +10,25 @@ use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-public function subCategoryList ()
+   
+//categorylist
+    public function categoryList ()
     {
-        $subCategories = SubCategory::get();
-        return view ('backend.sub-category.list', compact('subCategories'));
+        $categories = Category::get();
+
+
+        return view ('backend.category.list', compact('categories'));
     }
+    //categorylist
 
-    // public function categoryList()
-    // {
-    //     $categoties = Category::get();
-
-
-    //     return view ('backend.sub-category.list', compact('subCategories'));
-    // }
+    //categoryCreate
     public function categoryCreate()
     {
         return view('backend.category.create');
     }
+//categoryCreate
+
+//categoryStore
     public function categoryStore(Request $request)
     {
         $category = new Category();
@@ -48,7 +50,9 @@ public function subCategoryList ()
         $category->save();
         return Redirect('admin/category/list');
     }
+    //categoryStore
 
+    //categoryDelete
     public function categoryDelete($id)
     {
         $category = Category::find($id);
@@ -59,13 +63,18 @@ public function subCategoryList ()
         $category->delete();
         return redirect()->back();
     }
+//categoryDelete
+
+//categoryEdit
     public function categoryEdit($id)
     {
         $category = Category::find($id);
 
         return view('backend.category.edit', compact('category'));
     }
-   
+   //categoryEdit
+
+   //categoryupdate
     public function categoryUpdate(Request $request, $id)
 {
     $category = Category::find($id);
@@ -81,10 +90,7 @@ $imageName = rand().'categoryUpdate'.'.'.$request->image->extension();
 $request->image->move('backend/image/category/',$imageName );
 $category->image =$imageName;
 
-            // $imageName = rand() . 'categoryUpdate' . '.' . $request->image->extension();
-
-            // $request->image->move('backend/image/category', $imageName);
-            // $category->image = $imageName;
+            
 }
 
 
@@ -92,5 +98,6 @@ $category->image =$imageName;
     $category->save();
     return redirect()->back();
 }
+//categoryUpdate
 
 }
